@@ -1,0 +1,3 @@
+Antonio,Perez,78456244-H,10,0.2;Zumalakarregui,58,20015;
+Pepe,Gomez,71245689-R,11,0.25;Matia,3,20017;
+Francisco,Gonzalez,45872698-T,17,0.1;Zarategi,2,20016;
