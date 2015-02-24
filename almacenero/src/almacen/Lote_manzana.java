@@ -1,6 +1,7 @@
 package almacen;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import almacen.Manzana;
@@ -13,7 +14,8 @@ public class Lote_manzana {
 	
 	public void añadirManzanas() {
 	    
-		System.out.println(" ¿ Cuantas manzanas quieres ?");
+		try{
+			System.out.println(" ¿ Cuantas manzanas quieres ?");
 		sc = new Scanner(System.in);
 		numManzanas = sc.nextInt();
 		
@@ -21,6 +23,8 @@ public class Lote_manzana {
 			Manzana man = new Manzana();
 			man.añadirManzana();
 			manzanas.add(man);
+		} }catch (InputMismatchException exception){
+			System.out.println("Mete un numero no una letra");
 		}
 			
 	}

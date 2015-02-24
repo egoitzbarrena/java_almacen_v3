@@ -113,7 +113,7 @@ public class Cesta {
 		   		int numcli = sc.nextInt();
 		   try {	
 			   
-			    String ruta = "/root/git/java_almacen_v3/almacenero/clientes.txt";
+			    String ruta = "/root/git/java_almacen_v3/almaceneoro/clientes.txt";
 	 			File archivo2 = new File(ruta);
 				FileReader leer = new FileReader (archivo2);
 				bf = new BufferedReader(leer);
@@ -142,6 +142,7 @@ public class Cesta {
 		   		}
 		   		} catch(FileNotFoundException exception){
 			    	System.out.println("Error esta mal el fichero, no esta en ese lugar: ");
+			    	String ruta = "/root/git/java_almacen_v3/almacenero/clientes.txt";
 			    	
 			    }
 		   				catch(Exception ioe){
@@ -149,8 +150,8 @@ public class Cesta {
 		   				}
 		   		
 		   	
-		   	
-
+		   	try{
+		   		
 		   		System.out.println(" \n Cuantos productos quieres añadira a la cesta? ");
 	    		int cuan = sc.nextInt();
 
@@ -232,12 +233,12 @@ public class Cesta {
 						}
 						
 
-						System.out.println(cestacompra.get(ces).getPreciototalp());
-				   		System.out.println(condescuento);
+						//System.out.println(cestacompra.get(ces).getPreciototalp());
+				   		//System.out.println(condescuento);
    				}
 
    				for (int cest=0 ; cest < cestacompra.size(); cest++){
-   					System.out.println(" nNombre del producto: "+ cestacompra.get(cest).getNombreproducto() );
+   					System.out.println(" Nombre del producto: "+ cestacompra.get(cest).getNombreproducto() );
    					System.out.println(" Precio unidad/kilo: "+ cestacompra.get(cest).getPrecio_li_uni() );
    					System.out.println(" Precio sin descuento: "+ cestacompra.get(cest).getPreciototalp() );
 
@@ -245,10 +246,16 @@ public class Cesta {
 
    					totala = totala + cestacompra.get(cest).getDescuento();
    					
-   					System.out.println("totala da: " + totala );
+   					System.out.println("Precio con descuento del cliente: " + totala );
    				
 			
    				}
+		   		
+		   	} finally {
+		   		System.out.println("Gracias por su compra");
+		   	}
+
+		   		
 		}
 
 
