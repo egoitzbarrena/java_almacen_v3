@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import almacen.Manzana;
@@ -108,10 +109,13 @@ public class Cesta {
 			Double descuento1 = 0.0;
 			Double totala = 0.0;
 			
-			System.out.println("************Cesta*********** ");	   
-		   	System.out.println("Introduce el codigo del cliente:");
+			System.out.println("************Cesta*********** ");
+			try {
+			 	System.out.println("Introduce el codigo del cliente:");
 		   		int numcli = sc.nextInt();
-		   try {	
+				
+			
+
 			   
 			    String ruta = "/root/git/java_almacen_v3/almacenero/clientes.txt";
 	 			File archivo2 = new File(ruta);
@@ -136,22 +140,31 @@ public class Cesta {
 		   		
 		   			Double nc =Double.parseDouble(cortarString11[3]);
 		       		if (numcli == nc){
-		       			descuento1= Double.parseDouble(cortarString11[4]);
+		       			
+		       			try {
+		       				descuento1= Double.parseDouble(cortarString11[4]);
+		       			} finally {
+		       				System.out.println("el cliente existe");
+		       			}
+		       			
+		       			
 		       		}
 		       		linea = bf.readLine();
 		   		}
-		   		} catch(FileNotFoundException exception){
+			}catch (InputMismatchException exception){
+				System.out.println("Error !!! El codigo del cliente es un numero");
+			}
+		   		 catch(FileNotFoundException exception){
 			    	System.out.println("Error esta mal el fichero, no esta en ese lugar: ");
 			    	
-			    }
-		   				catch(Exception ioe){
+			    } catch(Exception ioe){
 		    	System.out.println("Error: "+ ioe);
 		   				}
 		   		
 		   	
 		   	try{
 		   		
-		   		System.out.println(" \n Cuantos productos quieres añadira a la cesta? ");
+		   		System.out.println(" \n Cuantos productos quieres añadir a a la cesta? ");
 	    		int cuan = sc.nextInt();
 
 
@@ -250,7 +263,10 @@ public class Cesta {
 			
    				}
 		   		
-		   	} finally {
+		   	}catch(NullPointerException exception){
+		    	System.out.println("Error !!!!!!! Alguno de los atributos del producto es null");
+		    	
+		    } finally {
 		   		System.out.println("Gracias por su compra");
 		   	}
 
