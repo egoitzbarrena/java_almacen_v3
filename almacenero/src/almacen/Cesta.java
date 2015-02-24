@@ -113,7 +113,7 @@ public class Cesta {
 		   		int numcli = sc.nextInt();
 		   try {	
 			   
-			    String ruta = "/root/git/java_almacen_v3/almaceneoro/clientes.txt";
+			    String ruta = "/root/git/java_almacen_v3/almacenero/clientes.txt";
 	 			File archivo2 = new File(ruta);
 				FileReader leer = new FileReader (archivo2);
 				bf = new BufferedReader(leer);
@@ -142,7 +142,6 @@ public class Cesta {
 		   		}
 		   		} catch(FileNotFoundException exception){
 			    	System.out.println("Error esta mal el fichero, no esta en ese lugar: ");
-			    	String ruta = "/root/git/java_almacen_v3/almacenero/clientes.txt";
 			    	
 			    }
 		   				catch(Exception ioe){

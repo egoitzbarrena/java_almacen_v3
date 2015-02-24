@@ -56,19 +56,27 @@ public void añadirManzana (){
 			
 		}
 		
+		
 	
 }
 
 public void pintarManzana(){
 	
-	System.out.println(" \n**************INFORMACION DE LAS MANZANAS**************" );
+	try {
+		
+		System.out.println(" \n**************INFORMACION DE LAS MANZANAS**************" );
+		System.out.println(" \nTipo de manzana: "+ this.getTipo() );
+	       System.out.println(" Procedencia: "+ this.getProcedencia());
+	       System.out.println(" Color : "+ this.getColor() );
+	       System.out.println(" Euros Kilo: "+this.getEurosKilo());
+	       System.out.println(" Codigo de barras:" + this.getCod_barras());
+	} finally {
+		System.out.println("\nManzana añadida");
+		}
+	
 	
 
-		System.out.println(" \nTipo de manzana: "+ this.getTipo() );
-       System.out.println(" Procedencia: "+ this.getProcedencia());
-       System.out.println(" Color : "+ this.getColor() );
-       System.out.println(" Euros Kilo: "+ this.getEurosKilo());
-       System.out.println(" Codigo de barras:" + this.getCod_barras());
+		
 	}
 	
 }

@@ -37,19 +37,6 @@ public class Lote_manzana {
 			man.pintarManzana();
 		}
 	}	
-		
-	/*public staic ArrayList<Manzana> obtenerManzanas() {
-		
-		for (int i = 0; i < manzanas.size();i++) {
-		      
-			manzanas.get(i);
-			System.out.println(manzanas.size());
-			
-		}
-		
-		return manzanas;
-	}
-	*/
 	
 public static ArrayList<Manzana> obtenerManzanas() {
 		
