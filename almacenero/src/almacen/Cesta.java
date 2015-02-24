@@ -2,9 +2,11 @@ package almacen;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
+
 import almacen.Manzana;
 import almacen.Cliente;
 import almacen.Leche;
@@ -96,11 +98,11 @@ public class Cesta {
 			
 
 			
-			//ArrayList<Leche> arrayleche = Leche.getLeches();
+			ArrayList<Leche> arrayleche = Lote_leche.obtenerLeches();
 			
 
 			
-			//ArrayList<Lechuga> arraylechuga = Lechuga.getLechugas();
+			ArrayList<Lechuga> arraylechuga = Lote_lechuga.obtenerLechugas();
 			
 			Double condescuento = 0.0;
 			Double descuento1 = 0.0;
@@ -111,7 +113,7 @@ public class Cesta {
 		   		int numcli = sc.nextInt();
 		   try {	
 			   
-			   String ruta = "/root/workspace/almacenero/clientes.txt";
+			    String ruta = "/root/git/java_almacen_v3/almacenero/clientes.txt";
 	 			File archivo2 = new File(ruta);
 				FileReader leer = new FileReader (archivo2);
 				bf = new BufferedReader(leer);
@@ -138,11 +140,16 @@ public class Cesta {
 		       		}
 		       		linea = bf.readLine();
 		   		}
-		   		} catch(Exception ioe){
-			    	System.out.println("Error: "+ ioe);
+		   		} catch(FileNotFoundException exception){
+			    	System.out.println("Error esta mal el fichero, no esta en ese lugar: ");
+			    	
 			    }
-		   	
+		   				catch(Exception ioe){
+		    	System.out.println("Error: "+ ioe);
+		   				}
 		   		
+		   	
+		   	
 
 		   		System.out.println(" \n Cuantos productos quieres añadira a la cesta? ");
 	    		int cuan = sc.nextInt();
@@ -179,7 +186,7 @@ public class Cesta {
 					
 						}
 				
-					/*	for (int lech=0 ; lech < arrayleche.size(); lech++){
+					for (int lech=0 ; lech < arrayleche.size(); lech++){
 				   				
 				   				if  (numbarras == arrayleche.get(lech).getCod_barras()){
 				   				Cesta cesta = new Cesta();
@@ -222,7 +229,7 @@ public class Cesta {
 				   				}
 				   				
 					
-						}*/
+						}
 						
 
 						System.out.println(cestacompra.get(ces).getPreciototalp());
