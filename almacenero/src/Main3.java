@@ -91,7 +91,7 @@ palabra2 = sc.nextInt();
 			break;
 
 		case 3: 
-			// la cesta no funciona
+			
 			
 			Cesta cesta = new Cesta();
 			
