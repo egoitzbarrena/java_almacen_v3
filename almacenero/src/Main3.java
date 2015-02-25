@@ -48,7 +48,7 @@ public class Main3 {
 	
 	//CODIGO DE BARRAS LECHUGA 1003
 
-	/*Lote_lechuga lot_lechu = new Lote_lechuga();
+	Lote_lechuga lot_lechu = new Lote_lechuga();
 	
 	lot_lechu.añadirLechugas();
 	lot_lechu.pintarLechugas();
@@ -59,7 +59,7 @@ public class Main3 {
 	
 	lot_leche.añadirLeches();
 	lot_leche.pintarLeches();
-	*/
+	
 	
 	
 	
